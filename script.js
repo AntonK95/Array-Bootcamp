@@ -118,33 +118,81 @@ console.log(fruits); */
 /* 14 */
 /* let fruits = ['kiwi', 'apple', 'pear']; */
 /* Sätt in en frukt i arrayen ovan på index 1. */
-console.log('Uppgift 14');
+/* let fruit = 'banana'
+fruits.splice(0, 0, fruit);
+console.log(fruits); */
 
 /* 15 */
 /* let fruits = ['kiwi', 'apple', 'pear']; */
 /* Sätt in tre frukter i arrayen ovan på index 2. */
-console.log('Uppgift 15');
+/* let basket = ['banana', 'orange', 'cherry'];
+fruits.splice(2, 0, ...basket);
+console.log(fruits); */
 
 /* 16 */
 /* let names = ['David', 'Christoffer', 'Johan', 'Maja'] */
 /* I arrayen ovan, ta bort Christoffer och Johan. */
-console.log('Uppgift 16');
+/* let updatedNames = names.filter(name => name !== 'Christoffer' && name !== 'Johan');
+
+if(updatedNames.length !== names.length) {
+    console.log('Namn borttaget');
+    updatedNames.forEach(name => console.log(name));
+} else {
+    console.log(updatedNames)
+} */
+
 
 /* 17 */
 /* let nums = [1,2,3,4,5,6,7,8,9]; */
 /* Spegelvänd på arrayen ovan. */
-console.log('Uppgift 17');
+/* nums.reverse(nums)
+console.log(nums); */
 
 /* 18 */
 /* let str = 'Supercalifragilisticexpialidocious'; */
-/* Kika om strängen ovan innehåller bokstaven n. */
-console.log('Uppgift 18');
+/* Kika om strängen ovan innehåller bokstaven n. */ //str.includes('valdBokstav')
+
+
+/* if(str.includes('n')) {
+    console.log('Bokstaven n finns  med i listan');
+} else {
+    console.log('Bokstaven n finns inte med i listan');
+} */
+
 
 /* 19 */
 /* let str = 'Supercalifragilisticexpialidocious'; */
 /* Kika om strängen ovan innehåller bokstaven x. */
-console.log('Uppgift 19');
+/* 
+if(str.includes('x')) {
+    console.log('Bokstaven x finns med i listan!')
+} else {
+    console.log('Bokstaven x finns inte med i listan...')
+} */
 
+// Ett sätt att lösa uppgiften med funtioner så man inte behöver skriva om if-satsen varje gång
+
+/* function checkLetter(string, letter) {
+    if(string.includes(letter)) {
+        console.log(`Bokstaven ${letter} finns med i listan!`)
+    } else {
+        console.log(`Bokstaven ${letter} finns inte med i listan...`)
+    }
+}
+ */
+/* let str = 'Supercalifragilisticexpialidocious';
+
+checkLetter(str, 'x'); // Anropar funktionen
+checkLetter(str, 'n'); // Anropar funktionen */
+
+// Om vi vill att användare skall kunna välja sträng och bokstav att söka efter
+/*  let str = window.prompt('Skriv ett ord eller faceplanta på tangentbordet');
+ let letter = window.prompt('Vilken bokstav vill du att vi letar efter?');
+
+ checkLetter(str, letter);
+ */
+
+ 
 /* 20 */
 /* let str = 'Supercalifragilisticexpialidocious'; */
 /* I ovanstående sträng, hitta vilket position första förekomsten av p har. */
