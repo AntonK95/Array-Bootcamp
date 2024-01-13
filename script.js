@@ -196,35 +196,49 @@ checkLetter(str, 'n'); // Anropar funktionen */
 /* 20 */
 /* let str = 'Supercalifragilisticexpialidocious'; */
 /* I ovanstående sträng, hitta vilket position första förekomsten av p har. */
-console.log('Uppgift 20');
+/* let findIndex = str.indexOf('p');
+
+console.log(findIndex); */
 
 /* 21 */
 /* let str = 'Supercalifragilisticexpialidocious'; */
 /* I strängen ovan, plocka fram de 5 första tecknena. */
-console.log('Uppgift 21');
+/* let firstFive = str.substring(0, 5);
+
+console.log(firstFive); */
 
 /* 22 */
 /* let str = 'Supercalifragilisticexpialidocious'; */
 /* I strängen ovan, plocka fram de 7 sista tecknena. */
-console.log('Uppgift 22');
+/* let lastSeven = str.slice(-7);
+
+console.log(lastSeven); */
 
 /* 23 */
 /* let numArray = [23, 45, 5, 62, 1, 21, 3, 54]; */
 /* I arrayen ovan, filtera fram alla nummer över 5. Tips: Läs dokumentationen för filter() */
-console.log('Uppgift 23');
+/* let higherThanFive = numArray.filter(function(number) {
+    return number > 5;
+});
+console.log(higherThanFive); */
 
 /* 24 */
 /* let numArray = [23, 45, 5, 62, 1, 21, 3, 54]; */
 /* I arrayen ovan, filtera fram alla nummer under 5. Tips: Läs dokumentationen för filter() */
-console.log('Uppgift 24');
+/* let lowerThanFive = numArray.filter(function(number){
+    return number < 5; // Vill vi även skriva ut 5an så anvönder vi return number <= 5; Där kan man säga att vi säger mindre ELLER lika med 5
+});
+console.log(lowerThanFive); */
 
 /* 25 */
 /* Skriv ut alla namn som är 18 år eller över från arrayen längst ner i dokumentet. */
-console.log('Uppgift 25');
+/* function(person) { ... } där ... är koden som bestämmer om person är 18 år eller äldre.  */
+
+
 
 /* 26 */
 /* Skriv ut alla namn som är under 18 år från arrayen längst ner i dokumentet. */
-console.log('Uppgift 26');
+// console.log('Uppgift 26');
 
 /* 27 */
 /* let arr = ['beta', 'alfa', 'gamma']; */
@@ -309,3 +323,45 @@ let persons = [
         age: 3
     }
 ]
+/* I arrayen ovan som heter persons har vi flera element.
+    Varje element är ett objekt som representerar en person där
+    alla har två egenskaper: name och age. */
+
+
+    /* Här använder vi .filter() metoden på persons arrayen.
+    filter tar en funktion som argument, och den funtionen kallas 
+    på varje element i arrayen. Om funtionen returnerar true,
+    kommer elementet att vara med i den nya arrayen som filter skapar.
+    I det här fallet är funtionen
+    function(peron){ return person.age >= 18; }
+    vilket betyder att det skapas en ny attay med bara de personer som är 18 eller äldre. 
+    
+    Hur man använder .filter() eller .forEach():
+    variabel.filter(function(nyVariabel){
+        kod att uföra;
+    }); */
+/* 25 */
+/* let adults = persons.filter(function(person) {
+    return person.age >= 18;
+}); */
+
+// console.log(adults);
+
+/* Här använder vi .forEach() metoden på adults arrayen.
+    Precis som .filter(), tar .forEach() en funtion som argument
+    och kallar på den på varje element i arrayen.
+    Skillnaden är att .forEach() inte skapar en ny array,
+    istället gör den något med varje element direkt.
+    I detta fallet loggar vi varje vuxen person till konsolen. */
+
+/* adults.forEach(function(person) {
+    console.log(person);
+}); */
+/* 26 */
+/* let underAge = persons.filter(function(person) {
+    return person.age < 18;
+});
+
+underAge.forEach(function(person) {
+    console.log(person);
+}); */
