@@ -23,6 +23,16 @@ console.log(animals[0]); */
 // I arrayen ovan, hämta funky chihuahua. 
 console.log(animals[3]); */
 
+/* console.log(animals[animals.lenth - 1]);
+let funky = animals.filter(animal => animal === 'funky chiuahua');
+console.log(funky.toString()); 
+animals.map(animal => {
+    if(animal === 'funky chiuahua')
+    console.log(animal);
+});*/
+
+
+
 /* 6 */
 /* let animals = ['cat', 'hamster', 'parrot', 'funky chihuahua'] */
 // I arrayen ovan, byt ut hamster mot tiger.
@@ -126,7 +136,7 @@ console.log(fruits); */
 /* let fruits = ['kiwi', 'apple', 'pear']; */
 /* Sätt in tre frukter i arrayen ovan på index 2. */
 /* let basket = ['banana', 'orange', 'cherry'];
-fruits.splice(2, 0, ...basket);
+fruits.splice(2, 0, ...basket); // Använd spread operator (...) för att lägga till elementen
 console.log(fruits); */
 
 /* 16 */
@@ -154,9 +164,9 @@ console.log(nums); */
 
 
 /* if(str.includes('n')) {
-    console.log('Bokstaven n finns  med i listan');
+    console.log('Yes');
 } else {
-    console.log('Bokstaven n finns inte med i listan');
+    console.log('No');
 } */
 
 
@@ -165,9 +175,9 @@ console.log(nums); */
 /* Kika om strängen ovan innehåller bokstaven x. */
 /* 
 if(str.includes('x')) {
-    console.log('Bokstaven x finns med i listan!')
+    console.log('Yes')
 } else {
-    console.log('Bokstaven x finns inte med i listan...')
+    console.log('No')
 } */
 
 // Ett sätt att lösa uppgiften med funtioner så man inte behöver skriva om if-satsen varje gång
@@ -214,6 +224,8 @@ console.log(firstFive); */
 
 console.log(lastSeven); */
 
+// console.log(str.substring(str.length -7)); 
+
 /* 23 */
 /* let numArray = [23, 45, 5, 62, 1, 21, 3, 54]; */
 /* I arrayen ovan, filtera fram alla nummer över 5. Tips: Läs dokumentationen för filter() */
@@ -241,14 +253,17 @@ console.log(lowerThanFive); */
 // console.log('Uppgift 26');
 
 /* 27 */
-/* let arr = ['beta', 'alfa', 'gamma']; */
+let alfArray = ['beta', 'alfa', 'gamma'];
 /* Sortera ovanstående array alfabetisk. Tips: Läs dokumentattionen för sort() */
-console.log('Uppgift 27');
+console.log(alfArray.sort());
 
 /* 28 */
 /* let nums = [1,5,7,9,3,4,2,6,8]; */
 /* Sortera ovanstående array numeriskt. */
-console.log('Uppgift 28');
+let numbers = [1,5,7,9,3,4,2,6,8];
+console.log(numbers.sort((a,b)=> {
+    return a - b
+}));
 
 /* 29 */
 /* I person-arrayen längst ner i dokumentet, sortera objekten efter ålder, yngst först. */
@@ -273,25 +288,52 @@ console.log('Uppgift 33');
 /* 34 */
 /* let fruits = ['apelsin', 'päron', 'äpple', 'kiwi']; */
 /* Loopa ut följande array med en forEach()-loop. console.log() varje ord. */
-console.log('Uppgift 34');
+/* 
+Hur man använder .filter() eller .forEach():
+variabel.filter(function(nyVariabel){
+    kod att uföra;
+}); */
+/* 
+fruits.forEach(function(fruit) {
+    console.log(fruit);
+}); 
+*/
+
 
 /* 35 */
 /* let fruits = ['apelsin', 'päron', 'äpple', 'kiwi']; */
 /* Loopa ut följande array med en for of-loop. console.log() varje ord. */
+/* Här skapar vi en ny variabel i for loopen. Såhär kan en for of loop se ut:
+ for (let nyVariabel of existerandeVariabel) {
+        // kod att utföra
+ };
+*/
+/* 
+for (let fruit of fruits) {
+    console.log(fruit);
+}; 
+*/
 console.log('Uppgift 35');
 
 /* 36 */
 /* let fruits = ['apelsin', 'päron', 'äpple', 'kiwi']; */
 /* Loopa ut följande array med en for-loop. console.log() varje ord. */
+/* for(let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}; */
 console.log('Uppgift 36');
 
 /* 37 */
-/* let fruits = ['apelsin', 'päron', 'äpple', 'kiwi']; */
+let fruits = ['apelsin', 'päron', 'äpple', 'kiwi'];
 /* Loopa ut följande array. För varje varv i loopen ska du också skriva ut index. ex: */
 /* 0 - apelsin */
 /* 1 - päron */
 /* 2 - äpple */
 /* osv... */
+for (let i = 0; i < fruits.length; i++) {
+    console.log(i + " - " + fruits[i]);
+}
+
 console.log('Uppgift 37');
 
 
@@ -322,7 +364,7 @@ let persons = [
         name: "Ella",
         age: 3
     }
-]
+];
 /* I arrayen ovan som heter persons har vi flera element.
     Varje element är ett objekt som representerar en person där
     alla har två egenskaper: name och age. */
@@ -365,3 +407,53 @@ let persons = [
 underAge.forEach(function(person) {
     console.log(person);
 }); */
+
+/* 29 */
+// Såhär kan man också göra för att sortera ut de element/personer i arrayen persons efter ålet, här yngst till äldst.
+console.log(persons.sort((a, b) => {return a.age - b.age})); 
+/* 30 */
+// Byter vi plats på (a,b) till (b,a) i return så sorterar man äldst till yngst
+console.log(persons.sort((a, b) => {return b.age - a.age}));
+
+/* 31 */
+/* 
+Här anropar vi .sort() på persons-arrayen, det kommer sortera arrayen baserat på jömförelsefunktionen vi skickar in
+((a, b) => {...}); Detta är jämförelsefunkt.. vi skickar in till .sort(). Den tar två parametrar, a och b, som representerar två element i arrayen.
+a.name.localeCompare(b.name) inuti jämförelsefunkt... använder vi localeCompare() för att jämföra name-egenskaperna i a-objektet med name-egenskaperna i b-objektet.
+localeCompare() returnerar -1 om a.name kommer före b.name i sortering, 1 om det kommer efter, 0 om de är lika. 
+Vi returnarar resultatet av localeCompare() med return. Detta resultat används av sort() för att bestämma ordningen på elementen i arrayen.
+*/
+console.log(persons.sort((a, b) => {
+    return a.name.localeCompare(b.name);
+}));
+// Byt plats på return a.name.localeCompare(b.name) till
+// return b.name.localeCompare(a.name) för att sortera åt andra hållet
+console.log(persons.sort((a, b) => {
+    return b.name.localeCompare(a.name);
+}));
+
+/* 32 */
+
+/* 
+.map() metoden kommer at gå igenom varje element i arrayen och utföra en funtion på det.
+persons => {...} Här använder vi en pilfunktion som tar ett argument som kallas persons. 
+Detta argument representerar varje objekt i persons-arrayen när .map() loppar igenom den.
+Inuti return persons.name.toUpperCase() funktionen tar man name-egenskapen av det aktuella objektet (persons.name)
+och omvandlar det till versaler med .toUpperCase(). Sedan returneras resultatet.
+Detta blir det nya elemetet i personInCaps-array. 
+Vi skapar let personInCaps variabeln i början för att spara det som returneras av .map()
+För att skriva ut alla namn som nu har gjorts om till versaler så får vi kalla på den nya variabeln där allt har sparats.
+Därav console.log(personInCaps); som är den nya variabeln.
+*/
+let personInCaps = persons.map(persons => {
+        return persons.name.toUpperCase();
+        
+});
+console.log(personInCaps);
+
+/* 33 */
+// .reverse(...) vänder helt enkelt på vald array
+persons.reverse(persons);
+console.log(persons);
+
+/* 34 */
